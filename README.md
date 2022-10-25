@@ -17,7 +17,7 @@
 ## 📚 VPN site-to-site AWS to GCP
 
 ''''
-##Redundant VPN##
+Redundant VPN
 
 From the Google side:
 
