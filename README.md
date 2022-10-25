@@ -11,11 +11,13 @@
 - https://calculator.aws/#/estimate
 - https://cloud.google.com/products/calculator
 - Always consider the AWS S3 Outbound Data Transfer (avoid transfers between different continents to avoid higher costs);
+- Use GCP Data Transfer service for AWS S3 migration;
 - Always consider the GCP PUT/POST cost using GCP Data Transfer S3->Cloud Storage;
 - Double-check both S3/Cloud Storage data for full application cutover;
 
 ## 📚 VPN site-to-site AWS to GCP
-
+- Alternative to migrate RDS first and EC2, Docker, Microservices or Monolithic applications that are database dependant for cutover;
+- Do not forget to check the route tables being published after enabling Route Propagation;
 ```
 Redundant VPN
 
@@ -59,3 +61,16 @@ On the AWS side:
 
 16) If you want, you can test by creating a micro EC2 on AWS in the same VPC as the RDS and with ICMP IPv4 enabled in the EC2 Security Group, just to ping on the GCP side of the EC2's private IPv4
 ```
+
+## 📚 AWS RDS to GCP Cloud SQL
+- Use GCP Database Migration service (by creating a profile and transfer jobs) for AWS RDS migration;
+- Alternative to use GCP Datamigration service by IP Allowlist method (works mainly with MySQL >5.7) or with VPN peering (with VPN site-to-site enabled);
+- Test job for connectivity and database troubleshooting;
+- GCP Network Intelligence Center helps for connectivity troubleshooting;
+- Telnet or ping for connectivity troubleshooting;
+- You can create new micro GCP Compute Engine to test database connection before migration through the estabilished VPN site-to-site ("mysql -h {IP}");
+- Do not forget to give Slave, Copy permissions for the database migration user to access from GCP side;
+
+## 📚 DNS
+- Useful to declare DNS for each application public IP on AWS;
+- Easier to migrate applications AWS -> GCP by just attaching the new GCP application public IP;
