@@ -16,7 +16,7 @@
 
 ## 📚 VPN site-to-site AWS to GCP
 
-''''
+'''
 Redundant VPN
 
 From the Google side:
@@ -58,4 +58,4 @@ On the AWS side:
 15) Go to Route tables, Route Propagation and enable for Virtual Private Gateway
 
 16) If you want, you can test by creating a micro EC2 on AWS in the same VPC as the RDS and with ICMP IPv4 enabled in the EC2 Security Group, just to ping on the GCP side of the EC2's private IPv4
-''''
+'''
