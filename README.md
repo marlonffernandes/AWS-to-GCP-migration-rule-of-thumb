@@ -21,7 +21,7 @@
 ```
 Redundant VPN
 
-From the Google side:
+GCP side:
 
 1) Create a Cloud Router with BGP ASN -> Add: peering/table network
 
@@ -44,7 +44,7 @@ From the Google side:
 17) You can use the Google Newtork Intelligence Center tool to troubleshoot connectivity via VPN and/or Shared Networks
 
 
-On the AWS side:
+AWS side:
 
 3) Create two Customer Gateway with BGP ASN and the two Google VPN interface IPs
 
