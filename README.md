@@ -64,12 +64,13 @@ On the AWS side:
 
 ## 📚 AWS RDS to GCP Cloud SQL
 - Use GCP Database Migration service (by creating a profile and transfer jobs) for AWS RDS migration;
-- Alternative to use GCP Datamigration service by IP Allowlist method (works mainly with MySQL >5.7) or with VPN peering (with VPN site-to-site enabled);
+- Alternative to use GCP Database Migration service by IP Allowlist method (works mainly with MySQL >5.7) or with VPN peering (with VPN site-to-site enabled);
 - Test job for connectivity and database troubleshooting;
 - GCP Network Intelligence Center helps for connectivity troubleshooting;
 - Telnet or ping for connectivity troubleshooting;
 - You can create new micro GCP Compute Engine to test database connection before migration through the estabilished VPN site-to-site ("mysql -h {IP}");
 - Do not forget to give Slave, Copy permissions for the database migration user to access from GCP side;
+- For the first wave RDS migration, the current AWS application must be set to Off (current RDS write option disabled) -> GCP Database Migration Service must read the entire RDS;
 
 ## 📚 DNS
 - Useful to declare DNS for each application public IP on AWS;
